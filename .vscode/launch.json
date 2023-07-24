@@ -1,0 +1,70 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch Dp",
+            "request": "launch",
+            "mainClass": "Dp",
+            "projectName": "codes_7d87617"
+        },
+        {
+            "type": "java",
+            "name": "Launch array2",
+            "request": "launch",
+            "mainClass": "array2",
+            "projectName": "codes_7d87617"
+        },
+        {
+            "type": "java",
+            "name": "Launch dplevel2",
+            "request": "launch",
+            "mainClass": "dplevel2",
+            "projectName": "codes_7d87617"
+        },
+        {
+            "type": "java",
+            "name": "Launch graph",
+            "request": "launch",
+            "mainClass": "graph",
+            "projectName": "codes_7d87617"
+        },
+        {
+            "type": "java",
+            "name": "Launch helloworld",
+            "request": "launch",
+            "mainClass": "helloworld",
+            "projectName": "codes_7d87617"
+        },
+        {
+            "type": "java",
+            "name": "Launch graph(1)",
+            "request": "launch",
+            "mainClass": "practice.graph",
+            "projectName": "codes_7d87617"
+        },
+        {
+            "type": "java",
+            "name": "Launch graphques",
+            "request": "launch",
+            "mainClass": "qgrap.graphques",
+            "projectName": "codes_7d87617"
+        },
+        {
+            "type": "java",
+            "name": "Launch sample",
+            "request": "launch",
+            "mainClass": "sample",
+            "projectName": "codes_7d87617"
+        }
+    ]
+}

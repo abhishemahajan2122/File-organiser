@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Demo JavaScript in Body</h2>
+
+<p id="demo">this will change on click of button</p>
+
+<button type="button" onclick="myFunction()">Try it</button>
+
+<script>
+function myFunction() {
+  document.getElementById("demo").innerHTML = "Paragraph changed.";
+}
+let text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+let length = text.length;
+let part = text.slice(7, 13);
+let part1 = text.substring(7, 13);
+let part2 = text.substr(7, 6);
+let newText = text.replace("ABC", "XYZ");
+text = text.replaceAll("XYZ","ABC");
+
+let text1 = "this is a lab";
+let text2 = text1.toUpperCase();
+let text3 = text2.toLowerCase();
+let text4 = text1.concat(" ", text2);
+
+let a, b, c;  
+a = 5;        
+b = 6;       
+c = a + b
