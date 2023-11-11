@@ -152,7 +152,7 @@ public static void swap(int[] arr, int st, int end){
 
 
 
-
+//sliding window
 
 
 
@@ -873,6 +873,17 @@ public int[] maxSlidingWindow(int[] nums, int k) {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 leetcode 1191: https://leetcode.com/problems/k-concatenation-maximum-sum/description/
 public int kConcatenationMaxSum(int[] arr, int k) {
   long prevsum = 0;
@@ -910,5 +921,3 @@ public static int kadanealgo(int arr[], int k) {
 }
 
 }
-
-

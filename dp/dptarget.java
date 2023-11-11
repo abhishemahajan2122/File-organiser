@@ -6,12 +6,12 @@ public class dptarget {
      
         int arr[] ={2,3,5,7};
         int target =10;
-        // int dp[] = new int [target+1];
-        // Arrays.fill(dp, -1);
-        int dp[][] = new int [arr.length+1][target+1];
-        for(int ok[]: dp){
-            Arrays.fill(ok,-1);
-        }
+        int dp[] = new int [target+1];
+       // Arrays.fill(dp, -1);
+        // int dp[][] = new int [arr.length+1][target+1];
+        // for(int ok[]: dp){
+        //     Arrays.fill(ok,-1);
+        // }
 
     //    System.out.println(permutation(arr, target , dp));
     //    display1(dp);
@@ -19,11 +19,11 @@ public class dptarget {
     //    System.out.println(combination(arr, arr.length, target , dp));
     //    display2(dp);
 
-    //     System.out.println(permutationtabu(arr, target , dp));
-    //    display1(dp);
+        System.out.println(permutationtabu(arr, target , dp));
+       display1(dp);
  
-        System.out.println(combination(arr, arr.length,target , dp));
-       display2(dp);
+    //     System.out.println(combinationtabu(arr, arr.length,target , dp));
+    //    display2(dp);
        
     }
 

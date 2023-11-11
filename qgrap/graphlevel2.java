@@ -56,18 +56,18 @@ public static void constructgraph(int vers , int edges){
         graph[i] = new ArrayList<>();
     }
     addEdge(graph, 0, 1, 10);
-    addEdge(graph, 0, 3, 10);
     addEdge(graph, 1, 2, 10);
-    addEdge(graph, 2, 3, 40);
+    addEdge(graph, 2, 0, 10);
+  //   addEdge(graph, 2, 3, 40);
 
-    addEdge(graph, 2, 7, 2);
-    addEdge(graph, 2, 8, 4);
-    addEdge(graph, 7, 8, 3);
+  //   addEdge(graph, 2, 7, 2);
+  //   addEdge(graph, 2, 8, 4);
+  //   addEdge(graph, 7, 8, 3);
 
-   addEdge(graph, 3, 4, 2);
-    addEdge(graph, 4, 5, 2);
-    addEdge(graph, 4, 6, 8);
-   addEdge(graph, 5, 6, 3);
+  //  addEdge(graph, 3, 4, 2);
+  //   addEdge(graph, 4, 5, 2);
+  //   addEdge(graph, 4, 6, 8);
+  //  addEdge(graph, 5, 6, 3);
 
    // addEdge(graph, 0, 6, 3);
 
@@ -76,7 +76,7 @@ public static void constructgraph(int vers , int edges){
     display(graph);
 
     //boolean [] visited = new boolean[vers];
-    int visited[] = new int[vers];
+    boolean visited[] = new boolean[vers];
     // System.out.println(haspath(graph, 0 , 6, visited));
     //allpath(graph, 0, 6, visited, "");
    // preorder(graph, 0, "", 0,visited);
@@ -91,10 +91,10 @@ public static void constructgraph(int vers , int edges){
   // System.out.println(ans);
   //System.out.println(gcc(graph));
 
-  //bfswithcycle(graph, 0, visited);
+  bfswithcycle(graph, 0, visited);
   // bfs(graph, 0, visited);
-  Arrays.fill(visited, -1);
-  bipartite(graph, 0, visited);
+  // Arrays.fill(visited, -1);
+  // bipartite(graph, 0, visited);
 
 
 
@@ -462,27 +462,27 @@ public static void bipartite(ArrayList<Edge> graph[], int src, int visited[]) {
 
   //topological sort 
 
-  //using dfs but this type fails in cases of cycle as it gives answer even when cycle is there
+  // //using dfs but this type fails in cases of cycle as it gives answer even when cycle is there
 
-  public static void topodfs(ArrayList<Edge>graph[], int src ,ArrayList<Integer>ans, visited boolean){
-    visited[src] = true;
-    for(Edge e : graph[src]){
-      if(!visited[e.v])
-      topodfs(graph, e.v , ans ,boolean);
-    }
-    ans.add(src);
-  }
+  // public static void topodfs(ArrayList<Edge>graph[], int src ,ArrayList<Integer>ans, visited boolean){
+  //   visited[src] = true;
+  //   for(Edge e : graph[src]){
+  //     if(!visited[e.v])
+  //     topodfs(graph, e.v , ans ,boolean);
+  //   }
+  //   ans.add(src);
+  // }
 
-  public static topoorderdfs(ArrayList<Edge>graph){
-    int n = graph.length;
-    boolean visited[] = new boolean [n];
-    ArrayList<Integer> ans= new ArrayList<>();
-    for(int i =0 ; i < n ; i++){
-      if(!visited)
-      topodfs(graph , i , ans, visited);
-    }
-    System.out.println(ans);
-  }
+  // public static topoorderdfs(ArrayList<Edge>graph){
+  //   int n = graph.length;
+  //   boolean visited[] = new boolean [n];
+  //   ArrayList<Integer> ans= new ArrayList<>();
+  //   for(int i =0 ; i < n ; i++){
+  //     if(!visited)
+  //     topodfs(graph , i , ans, visited);
+  //   }
+  //   System.out.println(ans);
+  // }
 }
 
 }

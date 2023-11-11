@@ -89,6 +89,52 @@ public class unionfind {
 
     }
 
+
+
+
+    //MST kushkal algorithem
+    //https://www.codingninjas.com/studio/problems/water-supply-in-a-village_1380956?leftPanelTab=
+
+    static int []par ;
+
+    public static int findpar(int u){
+      return(par[u]==u)?  u :(par[u] = findpar(par[u]));
+    }
+
+    public static int supplyWater(int n, int k, int[] wells, int[][] pipes) {
        
- 
-}
+      ArrayList<int[]> allpipes = new ArrayList<>();
+      for(int i =0 ; i< k ; i ++){
+          allpipes.add(pipes[i]);
+      }
+      for(int i = 0 ; i < wells.length; i++){
+
+          allpipes.add(new int[]{0 , i+1, wells[i]});
+      }
+
+      Collections.sort(allpipes,(a,b)->{
+          return a[2]-b[2];
+      });
+
+      par = new int[n+1];
+
+      for(int i = 0; i <=  n; i++){
+          par[i] = i ;
+      }
+      int ans = 0;
+      for(int e[] : allpipes){
+        int u = e[0], v =e[1] , w = e[2];
+        int p1 = findpar(u), p2 = findpar(v);
+        if(p1!=p2){
+            par[p1] = p2;
+            ans+=w;
+        }
+
+      }
+      return ans;
+
+    }
+
+
+
+  }

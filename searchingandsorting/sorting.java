@@ -15,7 +15,7 @@ public class sorting {
 
   }
 
-  public static void quicksort(int[]arr, int si ,int ei ){
+ public static void quicksort(int[]arr, int si ,int ei ){
      
     if(si>ei)
     return ;
@@ -46,5 +46,5 @@ public class sorting {
     int temp = arr[st];
     arr[st] = arr[en];
     arr[en] = temp;
-  }
+  } 
 }

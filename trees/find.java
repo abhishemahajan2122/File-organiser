@@ -1,5 +1,7 @@
 package trees;
 
+import java.util.ArrayList;
+
 public class find {
 
 
@@ -117,4 +119,162 @@ public class find {
 
 
      }
+
+
+    
+
+
+     //burning tree with water
+
+     public static void burntreewithwater(TreeNode root , TreeNode target){
+        ArrayList<ArrayList<Integer> = new ArrrayList<>();
+
+        burningtree(root, target , ans , waterset);
+        System.out.println(ans);
+
+
+     }
+
+
+     public static int burnnigtree(TreeNode root , TreeNode target , ArrayList<ArrayList<Integer>ans, HashSet<Integer> waterset ){
+        
+        if(root == null ){
+            return -1;
+        }
+
+
+        if(root == target){
+            if(!waterset.contains(root.value)){
+                burnkarkeaa(root,null , 0 , ans, waterset);
+                return 1;
+            }
+            return -2; // if target par hi water hai
+
+        }
+
+
+        int lt = burningtree(root.left, target, ans , waterset);
+
+        if(lt > 0){
+            if(!waterset.contains(root.value)){
+                burnkarkeaa(root, root.left , lt , ans, waterset);
+                return lt+1;
+            }
+            return -2;
+
+        }
+        
+        if(lt == -2){
+            return -2;
+        }
+
+
+
+        int rt = burningtree(root.right, target, ans , waterset);
+        
+        if(rt > 0){
+            if(!waterset.contains(root.value)){
+                burnkarkeaa(root, root.right , rt, ans, waterset);
+                return lt+1;
+            }
+            return -2;
+
+
+        }
+
+       return -1;
+
+
+     }
+
+
+     public static void burnkarkeaa(TreeNode root , TreeNode block , int time , ArrayList<ArrayList<Integer> ans, HashSet<Integer>waterset){
+       
+        if(root == null || root == block || waterset.contains(root.value)){
+            return ;
+        }
+
+        if(time == ans.size())
+         ans.add(ArrayList<>());
+         ans.get(time).add(root.value);
+
+
+         burnkarkeaa(root.left, block, time+1, ans, waterset);
+         burnkarkeaa(root.right, block, time+1, ans, waterset);
+
+     }
+    
+
+
+
+     //lca
+
+
+    // without optimization
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+
+        ArrayList<TreeNode> ans1 = new ArrayList<>();
+        ArrayList<TreeNode> ans2 = new ArrayList<>();
+
+        Nodetoroot(root, p , ans1);
+        Nodetoroot(root, q , ans2);
+        int i = ans1.size()-1, j = ans2.size()-1;
+
+        while(i>=0 && j >=0 && ans1.get(i) == ans2.get(j)){
+            i--;
+            j--;
+        }
+        
+        return ans1.get(i+1);
+        
+    }
+    public static boolean Nodetoroot(TreeNode root, TreeNode target, ArrayList<TreeNode> ans){
+        if(root ==null ){
+            return false;
+        }
+
+        if(root == target){
+            ans.add(target);
+            return true;
+        }
+
+        boolean res =  Nodetoroot(root.left, target, ans) || Nodetoroot(root.right, target,ans);
+        
+        if(res)
+        ans.add(root);
+
+        return res;
+
+    }
+
+
+
+
+    //with optimization
+    static TreeNode ans = null;
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        boolean check = lca(root,p, q);
+        return ans;
+    }
+
+    public static boolean lca (TreeNode root , TreeNode p , TreeNode q){
+        if(root == null ){
+            return false;
+        }
+
+        boolean selfpresent = (root == p || root == q);
+
+        boolean lt= lca(root.left, p , q);
+
+        boolean rt= lca(root.right, p , q);
+
+        if((selfpresent && lt) || (selfpresent && rt) || (lt && rt) ){
+          ans = root;
+          return true;
+        }
+
+        return selfpresent || lt || rt;
+    } 
+
+
 }
